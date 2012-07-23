@@ -9,9 +9,9 @@ function prompt_char {
     echo '○'
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}(%{%F{cyan}%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{cyan}%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}%{%B%F{red}%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%})"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 # %                - the escape character
@@ -30,12 +30,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # %E               - clear till end of line
 # %#               - % if user, # if root
 
-PROMPT='%{$reset_color%}
+PROMPT='%{%F{cyan}%}$(prompt_char)%{$reset_color%} \
 %{%F{yellow}%}%n%{$reset_color%}\
 %{%F{gray}%}@%{$reset_color%}\
 %{%F{blue}%}%m%{$reset_color%} \
 %{%B%F{green}%}${PWD/#$HOME/~}%{$reset_color%} \
 $(git_prompt_info)%{$reset_color%}%E
-%{%F{cyan}%}$(prompt_char)%{$reset_color%} %#%{$reset_color%} '
+%#%{$reset_color%} '
 
-RPROMPT='%{%F{gray}%}!%h%{$reset_color%} (%{%F{yellow}%}%T%{$reset_color%})'
+RPROMPT='%{%F{gray}%}!%h%{$reset_color%} %{%F{yellow}%}%T%{$reset_color%}'

@@ -10,7 +10,7 @@ function prompt_char {
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{%F{cyan}%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}%{%B%F{red}%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}%{%B%F{red}%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 

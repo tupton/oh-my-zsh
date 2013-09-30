@@ -14,6 +14,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{$reset_color%}%{%B%F{red}%}*%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
+
 # %                - the escape character
 # %{%f%k%b%}       - resets coloring/bolding
 # %{$reset_color%} - resets coloring/bolding
@@ -30,10 +31,13 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # %E               - clear till end of line
 # %#               - % if user, # if root
 
+function user_name {
+	[[ "$SSH_CONNECTION" != '' ]] && echo '%{%F{yellow}%}%n%{$reset_color%}%{%F{gray}%}@%{$reset_color%}%{%F{blue}%}%m%{$reset_color%} ' && return
+    echo ''
+}
+
 PROMPT='%{%F{cyan}%}$(prompt_char)%{$reset_color%} \
-%{%F{yellow}%}%n%{$reset_color%}\
-%{%F{gray}%}@%{$reset_color%}\
-%{%F{blue}%}%m%{$reset_color%} \
+$(user_name)\
 %{%B%F{green}%}${PWD/#$HOME/~}%{$reset_color%} \
 $(git_prompt_info)%{$reset_color%}%E
 %#%{$reset_color%} '

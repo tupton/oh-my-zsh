@@ -40,6 +40,6 @@ PROMPT='%{%F{cyan}%}$(prompt_char)%{$reset_color%} \
 $(user_name)%{$reset_color%}\
 %{%B%F{green}%}${PWD/#$HOME/~}%{$reset_color%} \
 $(git_prompt_info)%{$reset_color%}%E
-%#%{$reset_color%} '
+❯%{$reset_color%} '
 
 #RPROMPT='%{%F{gray}%}!%h%{$reset_color%} %{%F{yellow}%}%T%{$reset_color%}'

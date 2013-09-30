@@ -32,12 +32,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # %#               - % if user, # if root
 
 function user_name {
-	[[ "$SSH_CONNECTION" != '' ]] && echo '%{%F{yellow}%}%n%{$reset_color%}%{%F{gray}%}@%{$reset_color%}%{%F{blue}%}%m%{$reset_color%} ' && return
+	[[ "$SSH_CONNECTION" != '' ]] && echo '%{%F{yellow}%}%n%{%F{gray}%}@%{%F{blue}%}%m ' && return
     echo ''
 }
 
 PROMPT='%{%F{cyan}%}$(prompt_char)%{$reset_color%} \
-$(user_name)\
+$(user_name)%{$reset_color%}\
 %{%B%F{green}%}${PWD/#$HOME/~}%{$reset_color%} \
 $(git_prompt_info)%{$reset_color%}%E
 %#%{$reset_color%} '

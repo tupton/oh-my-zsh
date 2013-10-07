@@ -3,6 +3,6 @@ log/.zsh_history
 projects.zsh
 custom/example
 custom/example.zsh
-!custom/example.zshcache
 *.swp
+!custom/example.zshcache
 cache/
